@@ -1,0 +1,51 @@
+export default [
+  {
+    id:1,
+    title: "Eloquent JavaScript",
+    author: "Marjin Haverbeke",
+    price: "50",
+    image: "/books/eleoquent.jpg",
+  },
+  {
+    id:2,
+    title: "System Design Interview",
+    author: "Alex Xu",
+    price: "70",
+    image: "/books/system-design.webp",
+  },
+  {
+    id:3,
+    title: "Clean Architecture",
+    author: "Robert C. Martin",
+    price: "90",
+    image: "/books/clean-arch.webp",
+  },
+  {
+    id:4,
+    title: "Cracking the Coding Interview",
+    author: "Gayle Laakmann",
+    price: "110",
+    image: "/books/cragking.webp",
+  },
+  {
+    id:5,
+    title: "Refactoring",
+    author: "Martin Fowler",
+    price: "100",
+    image: "/books/refactoring.jpg",
+  },
+  {
+    id:6,
+    title: "Test-Driven Development",
+    author: "Kent Beck",
+    price: "40",
+    image: "/books/test.webp",
+  },
+  {
+    id:7,
+    title: "Patterns Of Enterprise Application Architecture ",
+    author: "Martin Fowler",
+    price: "90",
+    image: "/books/pattern.jpg",
+  },
+];

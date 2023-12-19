@@ -1,0 +1,6 @@
+.bookCard {
+    @apply flex flex-col items-center gap-2 my-2 max-w-xs w-full
+}
+.image {
+    @apply w-full h-64 object-fill 
+}
