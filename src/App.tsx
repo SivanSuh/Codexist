@@ -1,24 +1,23 @@
 import React from "react";
-import Input from "./components/Atoms/Input";
 import Navbar from "./components/Navbar";
-import { BookData } from "./mock";
-import BookCard from "./components/BookCard";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Home from "./pages/Home";
+import DetailCard from "./pages/DetailCard";
+import Basket from "./pages/Basket";
 
 const App = () => {
   return (
-    <div className="mx-auto ">
+    <>
       <Navbar />
       <br />
-      <div className="flex">
-        <Input placeholder="aramak istediginiz kitabı yazın" type="text" />
-      </div>
-
-      <div className="flex gap-4 flex-wrap mx-auto max-w-7xl w-full my-5 justify-center items-center">
-        {BookData.map((item) => (
-          <BookCard item={item} key={item.id} />
-        ))}
-      </div>
-    </div>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/detail/:id" element={<DetailCard />} />
+          <Route path="/basket" element={<Basket />} />
+        </Routes>
+      </Router>
+    </>
   );
 };
 

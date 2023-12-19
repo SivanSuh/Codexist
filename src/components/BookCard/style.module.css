@@ -1,6 +1,12 @@
 .bookCard {
     @apply flex flex-col items-center gap-2 my-2 max-w-xs w-full
 }
+.imageContainer {
+    @apply w-full h-72 
+}
 .image {
-    @apply w-full h-64 object-fill 
+    @apply  object-contain h-full w-full
+}
+.title {
+    @apply text-center
 }
