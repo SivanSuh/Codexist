@@ -1,6 +1,9 @@
 .nav {
-    @apply w-full  bg-[#2B3A42] p-2 text-center
+    @apply w-full text-white  bg-[#2B3A42] py-2 px-4 text-center flex justify-between items-center 
 }
 .title {
     @apply text-white text-2xl
+}
+.basket {
+    @apply flex items-center gap-3 hover:bg-black p-2 cursor-pointer
 }
