@@ -28,8 +28,21 @@ const basketSlice = createSlice({
               state.books.push(action.payload);
             }
           },
+          removeBasket: (state, action) => {
+            const findCardItem = state.books.find(
+              (item) => item?.id === action?.payload?.id
+            );
+      
+            if (findCardItem.quantity === 1) {
+              const index = state.books.findIndex((ites) => ites.id === action.payload.id);
+              console.log("siline id",index)
+              state.books.splice(index,1)
+            } else {
+              findCardItem.quantity--;
+            }
+          }
     }
 })
 
-export const { selectBook, addBasket}  = basketSlice.actions
+export const { selectBook, addBasket ,removeBasket}  = basketSlice.actions
 export default basketSlice.reducer

@@ -1,0 +1,19 @@
+
+.basketCard {
+    @apply flex items-center justify-between p-2 border-2  my-2 max-w-3xl md:flex-nowrap flex-wrap
+}
+.image {
+    @apply h-52 w-48 object-contain mx-auto
+}
+.wrapper {
+    @apply flex gap-6 md:flex-nowrap flex-wrap
+}
+.title {
+    @apply font-bold
+}
+.delete {
+    @apply flex gap-3 items-center mt-6 justify-center md:justify-start
+}
+.icon {
+    @apply cursor-pointer hover:text-red-700
+}

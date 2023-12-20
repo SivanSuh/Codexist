@@ -11,14 +11,14 @@ const DetailCard = () => {
   useEffect(() => {}, [id]);
 
   return (
-    <main>
-      <Link to="/" className="mx-2 hover:underline">
+    <main className="my-2 max-w-7xl mx-auto px-4">
+      <Link to="/" className="hover:underline">
         Return Home
       </Link>
       <br />
       <br />
-      <div className="flex items-start gap-10 max-w-4xl w-full mx-auto">
-        <img src={image} alt={title} className="w-96" />
+      <div className="flex items-start gap-10 max-w-4xl w-full mx-auto flex-wrap justify-center">
+        <img src={image} alt={title} className="max-w-sm w-full h-auto" />
         <div>
           <p className="text-2xl">{title}</p>
           <p>

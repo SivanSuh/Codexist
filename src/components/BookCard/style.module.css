@@ -5,7 +5,7 @@
     @apply w-full h-72 
 }
 .image {
-    @apply  object-contain h-full w-full
+    @apply  object-contain  h-full w-full  cursor-pointer
 }
 .title {
     @apply text-center

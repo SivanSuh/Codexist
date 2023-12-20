@@ -5,17 +5,17 @@ import BookCard from "../components/BookCard";
 
 const Home = () => {
   return (
-    <>
+    <main className="my-2 max-w-7xl mx-auto px-4">
       <div className="flex">
         <Input placeholder="aramak istediginiz kitabı yazın" type="text" />
       </div>
 
-      <div className="flex gap-4 flex-wrap mx-auto max-w-7xl w-full my-5 justify-center items-center">
+      <div className="flex gap-6 flex-wrap mx-auto max-w-7xl w-full my-5 justify-center items-center">
         {BookData.map((item) => (
           <BookCard item={item} key={item.id} />
         ))}
       </div>
-    </>
+    </main>
   );
 };
 export default Home;

@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import BookCardProps from "./props";
 import Style from "./style.module.css";
 import Button from "../Atoms/Button";
@@ -7,6 +7,7 @@ import { AppDispatch } from "../../store/store";
 import { addBasket, selectBook } from "../../store/slices/basketSlice";
 
 const BookCard: FC<BookCardProps> = ({ item }) => {
+  const [hover, setHover] = useState<any>("hidden");
   const navigate = useNavigate();
   const dispatch = AppDispatch();
 
@@ -21,7 +22,12 @@ const BookCard: FC<BookCardProps> = ({ item }) => {
     dispatch(addBasket({ ...item, quantity: 1 }));
   };
   return (
-    <div className={Style.bookCard} onClick={handleClick}>
+    <div
+      className={Style.bookCard}
+      onClick={handleClick}
+      onMouseEnter={() => setHover("visible")}
+      onMouseLeave={() => setHover("hidden")}
+    >
       <div className={Style.imageContainer}>
         <img className={Style.image} src={item.image} alt={item.title} />
       </div>
@@ -30,7 +36,9 @@ const BookCard: FC<BookCardProps> = ({ item }) => {
       </p>
       <p className={Style.title}>{item.title}</p>
       <p>{item.price} $</p>
-      <Button title="Add To Basket" onClick={basket} />
+      <div style={{ visibility: hover }}>
+        <Button title="Add To Basket" onClick={basket} />
+      </div>
     </div>
   );
 };
