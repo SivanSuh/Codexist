@@ -10,7 +10,9 @@ const Navbar = () => {
   return (
     <main className={Style.nav}>
       <div />
-      <h2 className={Style.title}>CODEXIST</h2>
+      <h2 className={Style.title}>
+        <Link to="/">CODEXIST</Link>
+      </h2>
       <Link to="/basket" className={Style.basket}>
         <div className={Style.shop}>
           <RiShoppingCartLine size={25} />

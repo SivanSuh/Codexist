@@ -4,7 +4,6 @@ import { RootState } from "../store/store";
 import { useSelector } from "react-redux";
 
 const DetailCard = () => {
-  // const { id } = useParams();
   const { selectedBook } = useSelector((state: RootState) => state.basket);
 
   const { id, title, author, image, price } = selectedBook;
@@ -17,7 +16,7 @@ const DetailCard = () => {
       </Link>
       <br />
       <br />
-      <div className="flex items-start gap-10 max-w-4xl w-full mx-auto flex-wrap justify-center">
+      <div className="flex items-start gap-10 max-w-7xl w-full  flex-wrap justify-start">
         <img src={image} alt={title} className="max-w-sm w-full h-auto" />
         <div>
           <p className="text-2xl">{title}</p>
