@@ -2,6 +2,26 @@
 
 Book Store App you can search , click book and go to the book detail or click the book add the basket.
 
+## Use
+
+#### install npm or yarn
+
+```
+ yarn  or  npm install
+```
+
+#### create webpack dist folder
+
+```
+ yarn start or  npm run start
+```
+
+#### run the project
+
+```
+ yarn serve or npm run serve
+```
+
 ## Technology && Packages
 
 - React js

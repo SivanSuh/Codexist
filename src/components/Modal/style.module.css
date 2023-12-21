@@ -1,0 +1,15 @@
+.modal {
+    @apply  w-full fixed  left-0 right-0 bottom-0 top-0 bg-[#C8C8C8] bg-opacity-25  flex justify-center items-center
+}
+.popup {
+    @apply fixed w-full bg-white rounded-md max-w-md p-4
+}
+.alan {
+    @apply flex justify-between  py-2 mb-2
+}
+.close {
+    @apply cursor-pointer text-2xl hover:text-red-500
+}
+.main {
+    @apply flex flex-col justify-center gap-1
+}

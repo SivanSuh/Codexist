@@ -1,5 +1,5 @@
 export default interface InputProps {
     placeholder:string;
-    type: "text"
-    onChange:(e:any) => void
+    type?: "text" | "password" | "number"
+    onChange?:(e:any) => void
 }
