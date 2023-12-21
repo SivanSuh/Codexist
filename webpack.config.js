@@ -1,3 +1,4 @@
+const CopyPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 const webpack = require("webpack");
@@ -9,6 +10,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     publicPath: "/",
     clean: true,
+    assetModuleFilename: "images/[hash][ext][query]",
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
@@ -17,6 +19,7 @@ module.exports = {
     rules: [
       {
         test: /\.(png|jpg|jpeg|gif|svg|webp)$/,
+        type: "asset/resource",
         use: [
           {
             loader: "file-loader",
@@ -43,6 +46,14 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve("./public/index.html"),
       filename: "index.html",
+    }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, "public/books"), // Kopyalanacak kaynak dizini
+          to: path.resolve(__dirname, "dist/books"), // Hedef dizin
+        },
+      ],
     }),
   ],
   devServer: {
