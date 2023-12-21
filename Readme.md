@@ -2,6 +2,8 @@
 
 Book Store App you can search , click book and go to the book detail or click the book add the basket.
 
+[Demo Link](https://codexist.vercel.app/)
+
 ## Use
 
 #### install npm or yarn
@@ -16,7 +18,7 @@ Book Store App you can search , click book and go to the book detail or click th
  yarn start or  npm run start
 ```
 
-#### run the project
+#### run the project development mode
 
 ```
  yarn serve or npm run serve

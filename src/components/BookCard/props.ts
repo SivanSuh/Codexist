@@ -7,4 +7,5 @@ interface Items {
     price:string;
     author:string;
     id?:number
+    description?:string
 }

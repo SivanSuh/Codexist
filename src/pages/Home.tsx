@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import Input from "../components/Atoms/Input";
 import { BookData } from "../mock";
 import BookCard from "../components/BookCard";
@@ -10,8 +10,12 @@ const Home = () => {
     setFilterText(e.target.value);
   };
 
-  const filteredBook = BookData.filter((value) =>
-    value.title.toLowerCase().includes(filterText.toLocaleLowerCase())
+  const filteredBook = useMemo(
+    () =>
+      BookData.filter((value) =>
+        value.title.toLowerCase().includes(filterText.toLocaleLowerCase())
+      ),
+    [filterText]
   );
 
   return (
