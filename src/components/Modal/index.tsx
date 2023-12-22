@@ -12,7 +12,7 @@ const Modal: FC<ModalProps> = ({ children, close, open, title }) => {
               <p>
                 <strong>{title}</strong>
               </p>
-              <p className={Style.close} onClick={() => close?.(false)}>
+              <p className={Style.close} onClick={close}>
                 X
               </p>
             </div>

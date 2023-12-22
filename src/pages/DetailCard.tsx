@@ -42,7 +42,7 @@ const DetailCard = () => {
                 onClick={() => dispatch(removeBasket(selectedBook))}
               />
             )}
-            <span className="mx-2">
+            <span className="mx-4">
               {filterValue ? filterValue?.quantity : 0}
             </span>
             <Button

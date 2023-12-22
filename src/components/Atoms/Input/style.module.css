@@ -1,3 +1,9 @@
+.inputContainer{
+    @apply my-2 flex flex-col items-center justify-center
+}
 .input {
     @apply outline-none p-3 border-2 mx-auto max-w-md w-full my-2 rounded-lg
+}
+.required {
+    @apply input border border-red-500
 }
