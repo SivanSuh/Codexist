@@ -1,21 +1,23 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { AppDispatch, RootState } from "../store/store";
 import { useSelector } from "react-redux";
 import Button from "../components/Atoms/Button";
-import { addBasket, removeBasket } from "../store/slices/basketSlice";
+import { addBasket } from "../store/slices/basketSlice";
+import book from "../mock/book";
 
 const DetailCard = () => {
+  const { id } = useParams();
   const { selectedBook, books } = useSelector(
     (state: RootState) => state.basket
   );
 
-  const { id, title, author, image, price, description } = selectedBook;
-  useEffect(() => {}, [id]);
-
-  const filterValue = books.find((val) => val.id === id);
+  const filterValue = book.find((val) => val.id === Number(id)); // book mock data find use params with ıd
+  useEffect(() => {}, [id, books, book]);
 
   const dispatch = AppDispatch();
+
+  const haveBooks = books.some((item) => item.id === filterValue?.id);
 
   return (
     <main className="my-2 max-w-7xl mx-auto px-4">
@@ -25,32 +27,44 @@ const DetailCard = () => {
       <br />
       <br />
       <div className="flex items-start gap-10 max-w-7xl w-full  flex-wrap justify-start">
-        <img src={image} alt={title} className="max-w-sm w-full h-auto" />
+        <img
+          src={filterValue?.image}
+          alt={filterValue?.title}
+          className="max-w-sm w-full h-auto"
+        />
         <div className="max-w-2xl w-full">
-          <p className="text-2xl">{title}</p>
+          <p className="text-2xl">{filterValue?.title}</p>
           <p>
-            <strong>{author}</strong>
+            <strong>{filterValue?.author}</strong>
           </p>
           <br />
-          <p>{description}</p>
+          <p>{filterValue?.description}</p>
           <br />
-          <p className="text-2xl font-bold mb-4">{price} $</p>
+          <p className="text-2xl font-bold mb-4">{filterValue?.price} $</p>
           <div>
-            {filterValue && (
+            {books?.length > 0 ? (
+              haveBooks ? (
+                <Button
+                  title="Added the card"
+                  bgColor="orange"
+                  disabled={true}
+                />
+              ) : (
+                <Button
+                  title="Add the Card"
+                  onClick={() =>
+                    dispatch(addBasket({ ...selectedBook, quantity: 1 }))
+                  }
+                />
+              )
+            ) : (
               <Button
-                title="-"
-                onClick={() => dispatch(removeBasket(selectedBook))}
+                title="Add the Card"
+                onClick={() =>
+                  dispatch(addBasket({ ...selectedBook, quantity: 1 }))
+                }
               />
             )}
-            <span className="mx-4">
-              {filterValue ? filterValue?.quantity : 0}
-            </span>
-            <Button
-              title="+"
-              onClick={() =>
-                dispatch(addBasket({ ...selectedBook, quantity: 1 }))
-              }
-            />
           </div>
         </div>
       </div>

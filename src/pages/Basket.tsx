@@ -15,7 +15,7 @@ const schema = yup
   .object({
     card: yup.string().trim().required("card name is  required"),
     cardNumber: yup.number().positive().required(),
-    cvc: yup.number().positive().min(3).max(3).required(),
+    cvc: yup.number().positive().min(3).required(),
   })
   .required();
 
@@ -66,9 +66,9 @@ const Basket = () => {
         {total > 0 && (
           <div className="max-w-xs w-full border-2 h-52 p-2">
             <h2 className="text-2xl text-center">Total</h2>
-            <p className="text-center text-4xl my-3 font-bold">{total} $</p>
+            <p className="text-center text-4xl my-3 font-bold">$ {total}</p>
             <div className="text-center">
-              <Button title="Satın Al" onClick={() => setOpen(true)} />
+              <Button title="Buy" onClick={() => setOpen(true)} />
             </div>
           </div>
         )}

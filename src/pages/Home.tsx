@@ -29,7 +29,7 @@ const Home = () => {
           register={register}
           name="search"
           onChange={onChange}
-          placeholder="Aramak istediginiz kitabı yazın..."
+          placeholder="Type the book you want to search..."
           type="text"
         />
       </div>

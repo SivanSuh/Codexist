@@ -18,7 +18,7 @@ const Navbar = () => {
           <RiShoppingCartLine size={25} />
           <span className={Style.counter}>{books.length}</span>
         </div>
-        <span className="text-white">Sepetim</span>
+        <span className="text-white">My Cart</span>
       </Link>
     </main>
   );
