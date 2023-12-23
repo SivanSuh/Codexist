@@ -46,12 +46,12 @@ const Basket = () => {
   };
 
   return (
-    <div className="my-2 max-w-7xl mx-auto px-4">
+    <div className="my-2 max-w-7xl mx-auto px-4 pb-52 lg:pb-0">
       <Link to="/" className="hover:underline">
         Return Home
       </Link>
       <main className="flex flex-wrap justify-between">
-        <div className="max-w-xl w-full">
+        <div className="lg:max-w-xl w-full">
           {books.length > 0 ? (
             books?.map((item) => {
               total += item.price * item.quantity;
@@ -64,7 +64,7 @@ const Basket = () => {
           )}
         </div>
         {total > 0 && (
-          <div className="max-w-xs w-full border-2 h-52 p-2">
+          <div className="lg:max-w-xs w-full border-2 lg:h-52 p-2 z-10 bg-white lg:sticky lg:top-24 fixed bottom-0 right-0 left-0">
             <h2 className="text-2xl text-center">Total</h2>
             <p className="text-center text-4xl my-3 font-bold">$ {total}</p>
             <div className="text-center">

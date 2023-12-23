@@ -11,7 +11,7 @@ const BasketCard: FC<BasketCardProps> = ({ item }) => {
     <main className={Style.basketCard}>
       <div className={Style.wrapper}>
         <img className={Style.image} src={item.image} alt={item.title} />
-        <div className="mx-auto">
+        <div className=" md:text-start text-center ">
           <p className={Style.title}>{item.title}</p>
           <p>{item.author}</p>
           <div className={Style.delete}>
@@ -28,7 +28,7 @@ const BasketCard: FC<BasketCardProps> = ({ item }) => {
         </div>
       </div>
       <span className="text-xl md:mx-0 mx-auto">
-        {Number(item.price) * item.quantity} $
+        ${Number(item.price) * item.quantity}
       </span>
     </main>
   );

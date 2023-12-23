@@ -1,12 +1,12 @@
 
 .basketCard {
-    @apply flex items-center justify-between p-2 border-2  my-2 max-w-3xl md:flex-nowrap flex-wrap
+    @apply flex items-start justify-between p-2 border-2  my-2 max-w-3xl md:flex-nowrap flex-wrap
 }
 .image {
-    @apply h-52 w-48 object-contain mx-auto
+    @apply h-52 md:w-48 object-contain md:mx-0 mx-auto w-full
 }
 .wrapper {
-    @apply flex gap-6 md:flex-nowrap flex-wrap
+    @apply flex gap-6 md:flex-nowrap flex-wrap w-full md:justify-start justify-center
 }
 .title {
     @apply font-bold
