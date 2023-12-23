@@ -37,3 +37,5 @@ Book Store App you can search , click book and go to the book detail or click th
 - react-router-dom
 - react-hook-form
 - yup
+- react-testing-library
+- jest

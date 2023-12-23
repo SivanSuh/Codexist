@@ -111,4 +111,4 @@ const Basket = () => {
   );
 };
 
-export default Basket;
+export default React.memo(Basket);

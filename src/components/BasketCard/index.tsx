@@ -34,4 +34,4 @@ const BasketCard: FC<BasketCardProps> = ({ item }) => {
   );
 };
 
-export default BasketCard;
+export default React.memo(BasketCard);
